@@ -8,8 +8,16 @@ The devices folder contains information for each type of device.
 * camelCase naming.
 * 5 levels of MQTT topic for a network (networkId / publisherId / deviceId / dataType / key).
 * Underscore [_] character not to be used in naming. It is reserved for replacing [/] character in non MQTT systems.
-* Each device will be assigned the following standard sub-topics:<br>
+* Each device will be assigned the following standard sub-topics to represent its state:<br>
   +/+/+/stat/state = on, off, ok, warning, or alarm<br>
   +/+/+/stat/alarms = the total number of current alarms
+* Each device will typically be assigned a setting to represent its type (from this protocol):<br>
+  +/+/+/settings/type
 
+## Device Types
 
+* boilerGroup
+* boiler
+* hiu
+* block
+* substation
