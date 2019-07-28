@@ -15,6 +15,7 @@ The devices folder contains information for each type of device.
   +/+/+/settings/deviceType
 * Each device can optionally be assigned a setting to represent its type version:<br>
   +/+/+/settings/deviceVersion
+  This can be a version described in this protocol, or the URL of a suitable JSON file following the format described here.
 
 ## Device Types
 
