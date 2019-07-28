@@ -3,7 +3,7 @@ Heat network protocol based on standardised network control and reporting method
 
 The devices folder contains information for each type of device.
 
-Protocol Rules:
+## Protocol Rules
 
 * camelCase naming.
 * 5 levels of MQTT topic for a network (networkId / publisherId / deviceId / dataType / key).
