@@ -13,6 +13,8 @@ The devices folder contains information for each type of device.
   +/+/+/stat/alarms = the total number of current alarms
 * Each device will typically be assigned a setting to represent its type (from this protocol):<br>
   +/+/+/settings/deviceType
+* Each device can optionally be assigned a setting to represent its type version:<br>
+  +/+/+/settings/deviceVersion
 
 ## Device Types
 
