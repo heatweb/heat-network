@@ -1,0 +1,27 @@
+{
+  "substation": {
+    "stat": {
+      "state": {
+        "title": "Device state",
+        "default": "ok",
+        "examples": [
+          "on",
+          "off",
+          "ok",
+          "warning",
+          "alarm"
+        ]
+      },
+      "alarms": {
+        "title": "Number of current alarms",
+        "default": 0
+      }
+    },
+    "dat": {
+      "tH": {
+        "title": "Temperature, primary hot supply",
+        "units": "°C"
+      }
+    }
+  }
+}
