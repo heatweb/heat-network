@@ -15,7 +15,7 @@ The devices folder contains information for each type of device.
 * Each device will typically be assigned a system level setting to represent its type (from this protocol):<br>
   +/+/+/system/deviceType
 * Each device can optionally be assigned a system setting to represent its type version:<br>
-  +/+/+/system/deviceVersion
+  +/+/+/system/deviceVersion<br>
   This can be a version described in this protocol, or the URL of a suitable JSON file following the format described here.
 
 ## Device Types
