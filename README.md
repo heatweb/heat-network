@@ -7,6 +7,6 @@ Protocol Rules:
 
 * camelCase naming.
 * 5 levels of MQTT topic for a network (networkId / publisherId / deviceId / dataType / key).
-* Underscore _ character not to be used in naming. It is reserved for replacing / character in non MQTT systems.
+* Underscore [_] character not to be used in naming. It is reserved for replacing [/] character in non MQTT systems.
 
 
