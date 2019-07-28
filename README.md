@@ -9,7 +9,7 @@ The devices folder contains information for each type of device.
 * 5 levels of MQTT topic for a network (networkId / publisherId / deviceId / dataType / key).
 * Underscore [_] character not to be used in naming. It is reserved for replacing [/] character in non MQTT systems.
 * Each device will be assigned the following standard sub-topics:<br>
-  ... / stat / state = on, off, ok, warning, or alarm<br>
-  ... / stat / alarms = the total number of current alarms
+  +/+/+/stat/state = on, off, ok, warning, or alarm<br>
+  +/+/+/stat/alarms = the total number of current alarms
 
 
