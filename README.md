@@ -26,6 +26,14 @@ If you already have your MQTT heat network up and running, the example flows inc
 
 This protocol can also be used in conjunction with an array of apps for mobile devices, providing the topics required to access readings, or to send commands. Server details and personal credentials for access will need to be setup and provided by the network operator. Topics and Node-RED flows are provided within this protocol to enable pairing between users and devices using tapping functions (hot tap signals).
 
+To access data on an MQTT server you will need:
+
+* server address
+* server port number
+* user name
+* user password
+* list of topics you have permission for (this protocol helps there) 
+
 ## Device Types
 
 * boilerGroup
