@@ -16,7 +16,7 @@ The devices folder contains information for each type of device.
 * Each device can optionally be assigned a system setting to represent its type version:<br>
   +/+/+/system/deviceVersion<br>
   This can be a version described in this protocol, or the URL of a suitable JSON file following the format described here. Values will overwrite default values inferred from the deviceId.
-  * The publishId (node) should be an 8 character string, containing either letters or numbers, but no other characters. This is to maintain compatibility with radio systems using a 16 character hex Id.
+* The publishId (node) should be an 8 character string, containing either letters or numbers, but no other characters. This is to maintain compatibility with radio systems using a 16 character hex Id.
 
 ## How to use this protocol
 
