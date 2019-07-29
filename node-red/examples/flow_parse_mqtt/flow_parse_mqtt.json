@@ -1,0 +1,225 @@
+[
+    {
+        "id": "92f553e0.da738",
+        "type": "tab",
+        "label": "Protocol",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b095e9a4.bd4198",
+        "type": "inject",
+        "z": "92f553e0.da738",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "66037535.22d464"
+            ]
+        ]
+    },
+    {
+        "id": "463b9706.f21af",
+        "type": "debug",
+        "z": "92f553e0.da738",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 790,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "66037535.22d464",
+        "type": "http request",
+        "z": "92f553e0.da738",
+        "name": "default_topics.json",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "https://raw.githubusercontent.com/heatweb/heat-network/master/devices/default_topics.json",
+        "tls": "",
+        "proxy": "",
+        "authType": "",
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "1a105c9c.7af87b"
+            ]
+        ],
+        "info": "Fetches default device protocol data from GitHub"
+    },
+    {
+        "id": "1a105c9c.7af87b",
+        "type": "change",
+        "z": "92f553e0.da738",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topics",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 120,
+        "wires": [
+            [
+                "463b9706.f21af"
+            ]
+        ]
+    },
+    {
+        "id": "faff641e.4bbf58",
+        "type": "inject",
+        "z": "92f553e0.da738",
+        "name": "GENERATE DUMMY DATA",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 260,
+        "y": 420,
+        "wires": [
+            [
+                "47541c98.46a8bc"
+            ]
+        ]
+    },
+    {
+        "id": "47541c98.46a8bc",
+        "type": "random",
+        "z": "92f553e0.da738",
+        "name": "",
+        "low": "1",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 460,
+        "y": 420,
+        "wires": [
+            [
+                "9e4df653.bdabc"
+            ]
+        ]
+    },
+    {
+        "id": "9e4df653.bdabc",
+        "type": "mqtt out",
+        "z": "92f553e0.da738",
+        "name": "",
+        "topic": "testHeatNetwork/protocolScript/substation1/dat/tH",
+        "qos": "0",
+        "retain": "false",
+        "broker": "15057af5.972105",
+        "x": 750,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7199e352.7fca54",
+        "type": "mqtt in",
+        "z": "92f553e0.da738",
+        "name": "",
+        "topic": "testHeatNetwork/#",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "15057af5.972105",
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "77f10f0a.3fafc",
+                "a00d906c.7b929"
+            ]
+        ]
+    },
+    {
+        "id": "77f10f0a.3fafc",
+        "type": "debug",
+        "z": "92f553e0.da738",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 470,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a00d906c.7b929",
+        "type": "function",
+        "z": "92f553e0.da738",
+        "name": "parse MQTT",
+        "func": "msg.networkId = msg.topic.split(\"/\")[0];\nmsg.nodeId = msg.topic.split(\"/\")[1];\nmsg.deviceId = msg.topic.split(\"/\")[2];\nmsg.dataType = msg.topic.split(\"/\")[3];\nmsg.dataKey = msg.topic.split(\"/\")[4];\nmsg.deviceType = msg.deviceId.replace(/[0-9]/i,\"\");\n\nvar defaultTopics = global.get(\"topics.default\") || {};\nvar devTopics =  global.get(\"topics.\"+msg.deviceType) || {};\nvar typeData = defaultTopics[msg.dataType] || {};\nvar keyData = typeData[msg.dataKey] || {};\n\nmsg.title = keyData[\"title\"] || msg.dataKey;\nmsg.units = keyData[\"units\"] || \"\";\n\nmsg.payload = msg.title + \" is \" + msg.payload + msg.units + \" on \" + msg.deviceId;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 240,
+        "wires": [
+            [
+                "59a2d43a.946444"
+            ]
+        ]
+    },
+    {
+        "id": "59a2d43a.946444",
+        "type": "debug",
+        "z": "92f553e0.da738",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 670,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "15057af5.972105",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
