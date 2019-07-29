@@ -21,6 +21,19 @@ The devices folder contains information for each type of device.
 
 * boilerGroup
 * boiler
+* heatpump
+* buffer
 * hiu
 * block
 * substation
+* pumpGroup
+* pump
+* pressure
+* gas
+* network
+* plantroom
+* onewire
+* meter
+* panel
+* bypass
+* filter
