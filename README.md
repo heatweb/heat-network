@@ -8,7 +8,7 @@ The devices folder contains information for each type of device.
 * camelCase naming.
 * 5 levels of MQTT topic for a network (networkId / publisherId / deviceId / dataType / key).
 * The standard data types are "dat" (readings), "stat" (statistics, calculations), "alarm", "system", "settings", "set" & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
-* Underscore [_] character not to be used in naming. It is reserved for replacing [/] character in non MQTT systems.
+* Underscore "_" character not to be used in naming. It is reserved for replacing "/" character in non MQTT systems.
 * Each device will be assigned the following standard sub-topics to represent its state:<br>
   +/+/+/stat/state = on, off, ok, warning, or alarm<br>
   +/+/+/stat/alarms = the total number of current alarms
