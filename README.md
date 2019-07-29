@@ -1,4 +1,4 @@
-# Heat Network MQTT Protocol
+# Heat Network MQTT Protocol with Node-RED
 Heat network protocol based on standardised network control and reporting methodology.
 
 The devices folder contains information for each type of device.
