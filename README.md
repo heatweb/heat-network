@@ -28,7 +28,6 @@ This project is organised to enable systems to automatically:
 * Setup calculated values
 * Implement manufacturer specific topics using the *system/deviceVersion* topic
 * Link to web based documentation such as manufacturers installation instructions
-* Save incoming data into local memory along with a timestamp
 
 This project folder on GitHub contains JSON data files that describe the protocol, devices, and other useful data.  These files can be imported directly info software such as Node-RED. Example Node-RED flows are provided under the examples folder to get you up and running handling live data in a matter of minutes. 
 
