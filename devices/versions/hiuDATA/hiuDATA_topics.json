@@ -1,0 +1,23 @@
+{
+  "hiuDATA": {
+    "system": {
+      "deviceVersion": {
+        "title": "Device version",
+        "default": "hiuDATA"
+      },
+      "deviceModel": {
+        "title": "Device model",
+        "default": "DATA twin plate HIU"
+      },
+      "manufacturer": {
+        "title": "Manufacturer",
+        "default": "Thermal Integration Ltd."
+      }     
+    },
+    "url": {
+      "installGuide": {
+        "title": "Installation Instructions",
+        "default": "http://www.heatweb.co.uk/w/images/5/55/TIL_PDF_Binders_Installation_Instructions_D3.pdf"
+      }
+  }
+}
