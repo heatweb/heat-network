@@ -20,6 +20,16 @@ The devices folder contains information for each type of device.
 
 ## How to use this protocol
 
+This project is organised to enable systems to automatically:
+
+* Provide descriptions of topics
+* Provide units of measurement
+* Setup default values
+* Setup calculated values
+* Implement manufacturer specific topics using the *system/deviceVersion* topic
+* Link to web based documentation such as manufacturers installation instructions
+* Save incoming data into local memory along with a timestamp
+
 This project folder on GitHub contains JSON data files that describe the protocol, devices, and other useful data.  These files can be imported directly info software such as Node-RED. Example Node-RED flows are provided under the examples folder to get you up and running handling live data in a matter of minutes. 
 
 If you already have your MQTT heat network up and running, the example flows include real-time dashboards to accesss data on the network. These can be used for remote monitoring, commissioning, or to enable custom alarm routes to be programmed.  You will need server to know the server details and your personal credentials for access.
