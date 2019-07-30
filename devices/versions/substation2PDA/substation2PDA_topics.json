@@ -1,0 +1,14 @@
+{
+  "substation2PDA": {
+    "system": {
+      "deviceVersion": {
+        "title": "Device version",
+        "default": "substation2PDA"
+      },
+      "modeOperation": {
+        "title": "Mode of operation",
+        "default": "duty/assist"
+      }      
+    }
+  }
+}
