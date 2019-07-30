@@ -36,7 +36,7 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 790,
+        "x": 810,
         "y": 120,
         "wires": []
     },
@@ -100,8 +100,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 260,
-        "y": 420,
+        "x": 240,
+        "y": 580,
         "wires": [
             [
                 "47541c98.46a8bc"
@@ -117,8 +117,8 @@
         "high": "100",
         "inte": "true",
         "property": "payload",
-        "x": 460,
-        "y": 420,
+        "x": 440,
+        "y": 580,
         "wires": [
             [
                 "9e4df653.bdabc"
@@ -134,8 +134,8 @@
         "qos": "0",
         "retain": "false",
         "broker": "15057af5.972105",
-        "x": 750,
-        "y": 420,
+        "x": 730,
+        "y": 580,
         "wires": []
     },
     {
@@ -147,8 +147,8 @@
         "qos": "0",
         "datatype": "auto",
         "broker": "15057af5.972105",
-        "x": 210,
-        "y": 240,
+        "x": 190,
+        "y": 300,
         "wires": [
             [
                 "77f10f0a.3fafc",
@@ -166,8 +166,8 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 470,
-        "y": 300,
+        "x": 370,
+        "y": 380,
         "wires": []
     },
     {
@@ -175,14 +175,17 @@
         "type": "function",
         "z": "92f553e0.da738",
         "name": "parse MQTT",
-        "func": "msg.networkId = msg.topic.split(\"/\")[0];\nmsg.nodeId = msg.topic.split(\"/\")[1];\nmsg.deviceId = msg.topic.split(\"/\")[2];\nmsg.dataType = msg.topic.split(\"/\")[3];\nmsg.dataKey = msg.topic.split(\"/\")[4];\nmsg.deviceType = msg.deviceId.replace(/[0-9]/i,\"\");\n\nvar defaultTopics = global.get(\"topics.default\") || {};\nvar devTopics =  global.get(\"topics.\"+msg.deviceType) || {};\nvar typeData = defaultTopics[msg.dataType] || {};\nvar keyData = typeData[msg.dataKey] || {};\n\nmsg.title = keyData[\"title\"] || msg.dataKey;\nmsg.units = keyData[\"units\"] || \"\";\n\nmsg.payload = msg.title + \" is \" + msg.payload + msg.units + \" on \" + msg.deviceId;\n\nreturn msg;",
-        "outputs": 1,
+        "func": "msg.networkId = msg.topic.split(\"/\")[0];\nmsg.nodeId = msg.topic.split(\"/\")[1];\nmsg.deviceId = msg.topic.split(\"/\")[2];\nmsg.dataType = msg.topic.split(\"/\")[3];\nmsg.dataKey = msg.topic.split(\"/\")[4];\nmsg.deviceType = msg.deviceId.replace(/[0-9]/i,\"\");\n\nvar defaultTopics = global.get(\"topics.default\") || {};\nvar devTopics =  global.get(\"topics.\"+msg.deviceType) || {};\nvar typeData = defaultTopics[msg.dataType] || {};\nvar keyData = typeData[msg.dataKey] || {};\n\nmsg.title = keyData[\"title\"] || msg.dataKey;\nmsg.units = keyData[\"units\"] || \"\";\n\nmsg.payload = msg.title + \" is \" + msg.payload + msg.units + \" on \" + msg.deviceId;\n\n\nif (global.get(\"topics.\" + msg.deviceType)) { return [msg,null]; }\n\nmsg2={};\nmsg2.url = \"https://raw.githubusercontent.com/heatweb/heat-network/master/devices/\" +  msg.deviceType + \"/\" +  msg.deviceType + \"_topics.json\"\n\nmsg2.topic = msg.deviceType;\nmsg2.payload = msg.deviceType;\n\nreturn [msg,msg2]; ",
+        "outputs": 2,
         "noerr": 0,
-        "x": 470,
-        "y": 240,
+        "x": 450,
+        "y": 300,
         "wires": [
             [
                 "59a2d43a.946444"
+            ],
+            [
+                "f4b9c703.fb2ba"
             ]
         ]
     },
@@ -196,8 +199,167 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 670,
+        "x": 650,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9e76a15d.1def78",
+        "type": "http request",
+        "z": "92f553e0.da738",
+        "name": "GitHub",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "",
+        "tls": "",
+        "proxy": "",
+        "authType": "",
+        "x": 750,
+        "y": 400,
+        "wires": [
+            [
+                "c988be5e.cadde8"
+            ]
+        ],
+        "info": "Fetches default device protocol data from GitHub"
+    },
+    {
+        "id": "45f4e9f.d4e2c98",
+        "type": "debug",
+        "z": "92f553e0.da738",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1010,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f4b9c703.fb2ba",
+        "type": "rbe",
+        "z": "92f553e0.da738",
+        "name": "once",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 630,
+        "y": 400,
+        "wires": [
+            [
+                "9e76a15d.1def78"
+            ]
+        ]
+    },
+    {
+        "id": "b279f074.51ced",
+        "type": "inject",
+        "z": "92f553e0.da738",
+        "name": "GENERATE DUMMY DATA",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 640,
+        "wires": [
+            [
+                "64223da3.9a04bc"
+            ]
+        ]
+    },
+    {
+        "id": "64223da3.9a04bc",
+        "type": "random",
+        "z": "92f553e0.da738",
+        "name": "",
+        "low": "1",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 440,
+        "y": 640,
+        "wires": [
+            [
+                "eb70a6e1.8bccd8"
+            ]
+        ]
+    },
+    {
+        "id": "eb70a6e1.8bccd8",
+        "type": "mqtt out",
+        "z": "92f553e0.da738",
+        "name": "",
+        "topic": "testHeatNetwork/protocolScript/hiu23456/dat/tC",
+        "qos": "0",
+        "retain": "false",
+        "broker": "15057af5.972105",
+        "x": 720,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "c988be5e.cadde8",
+        "type": "function",
+        "z": "92f553e0.da738",
+        "name": "",
+        "func": "function isObject(item) {\n  return (item && typeof item === 'object' && !Array.isArray(item));\n}\n\n\nfunction mergeDeep(target, ...sources) {\n  if (!sources.length) return target;\n  const source = sources.shift();\n\n  if (isObject(target) && isObject(source)) {\n    for (const key in source) {\n      if (isObject(source[key])) {\n        if (!target[key]) Object.assign(target, { [key]: {} });\n        mergeDeep(target[key], source[key]);\n      } else {\n        Object.assign(target, { [key]: source[key] });\n      }\n    }\n  }\n\n  return mergeDeep(target, ...sources);\n}\n\nvar defaultTopics = global.get(\"topics\") || {};\nvar devTopics =  msg.payload;\n\nmsg.payload = mergeDeep(defaultTopics,devTopics);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 870,
+        "y": 400,
+        "wires": [
+            [
+                "45f4e9f.d4e2c98"
+            ]
+        ]
+    },
+    {
+        "id": "78c38fcd.45fc1",
+        "type": "comment",
+        "z": "92f553e0.da738",
+        "name": "This is run once at start to fetch the default topic info from GitHub",
+        "info": "",
+        "x": 320,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "639a6001.3275b",
+        "type": "comment",
+        "z": "92f553e0.da738",
+        "name": "This section deals with incoming mqtt messages, and fetches additional data.",
+        "info": "",
+        "x": 350,
         "y": 240,
+        "wires": []
+    },
+    {
+        "id": "dd8e58fe.37fe08",
+        "type": "comment",
+        "z": "92f553e0.da738",
+        "name": "This section generates dummy data for testing.",
+        "info": "",
+        "x": 260,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "34524e6f.59a92a",
+        "type": "comment",
+        "z": "92f553e0.da738",
+        "name": "Further information on device topics is fetched from GitHub and saved",
+        "info": "",
+        "x": 830,
+        "y": 360,
         "wires": []
     },
     {
