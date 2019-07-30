@@ -101,7 +101,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 240,
-        "y": 580,
+        "y": 660,
         "wires": [
             [
                 "47541c98.46a8bc"
@@ -118,7 +118,7 @@
         "inte": "true",
         "property": "payload",
         "x": 440,
-        "y": 580,
+        "y": 660,
         "wires": [
             [
                 "9e4df653.bdabc"
@@ -135,7 +135,7 @@
         "retain": "false",
         "broker": "15057af5.972105",
         "x": 730,
-        "y": 580,
+        "y": 660,
         "wires": []
     },
     {
@@ -166,8 +166,8 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 370,
-        "y": 380,
+        "x": 298,
+        "y": 350,
         "wires": []
     },
     {
@@ -178,7 +178,7 @@
         "func": "msg.networkId = msg.topic.split(\"/\")[0];\nmsg.nodeId = msg.topic.split(\"/\")[1];\nmsg.deviceId = msg.topic.split(\"/\")[2];\nmsg.dataType = msg.topic.split(\"/\")[3];\nmsg.dataKey = msg.topic.split(\"/\")[4];\nmsg.deviceType = msg.deviceId.replace(/[0-9]/i,\"\");\n\nvar defaultTopics = global.get(\"topics.default\") || {};\nvar devTopics =  global.get(\"topics.\"+msg.deviceType) || {};\nvar typeData = defaultTopics[msg.dataType] || {};\nvar keyData = typeData[msg.dataKey] || {};\n\nmsg.title = keyData[\"title\"] || msg.dataKey;\nmsg.units = keyData[\"units\"] || \"\";\n\nmsg.payload = msg.title + \" is \" + msg.payload + msg.units + \" on \" + msg.deviceId;\n\n\nif (global.get(\"topics.\" + msg.deviceType)) { return [msg,null]; }\n\nmsg2={};\nmsg2.url = \"https://raw.githubusercontent.com/heatweb/heat-network/master/devices/\" +  msg.deviceType + \"/\" +  msg.deviceType + \"_topics.json\"\n\nmsg2.topic = msg.deviceType;\nmsg2.payload = msg.deviceType;\n\nreturn [msg,msg2]; ",
         "outputs": 2,
         "noerr": 0,
-        "x": 450,
+        "x": 490,
         "y": 300,
         "wires": [
             [
@@ -199,7 +199,7 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 650,
+        "x": 690,
         "y": 300,
         "wires": []
     },
@@ -215,7 +215,7 @@
         "tls": "",
         "proxy": "",
         "authType": "",
-        "x": 750,
+        "x": 810,
         "y": 400,
         "wires": [
             [
@@ -234,27 +234,9 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 1010,
+        "x": 1070,
         "y": 400,
         "wires": []
-    },
-    {
-        "id": "f4b9c703.fb2ba",
-        "type": "rbe",
-        "z": "92f553e0.da738",
-        "name": "once",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 630,
-        "y": 400,
-        "wires": [
-            [
-                "9e76a15d.1def78"
-            ]
-        ]
     },
     {
         "id": "b279f074.51ced",
@@ -269,7 +251,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 230,
-        "y": 640,
+        "y": 720,
         "wires": [
             [
                 "64223da3.9a04bc"
@@ -286,7 +268,7 @@
         "inte": "true",
         "property": "payload",
         "x": 440,
-        "y": 640,
+        "y": 720,
         "wires": [
             [
                 "eb70a6e1.8bccd8"
@@ -303,7 +285,7 @@
         "retain": "false",
         "broker": "15057af5.972105",
         "x": 720,
-        "y": 640,
+        "y": 720,
         "wires": []
     },
     {
@@ -314,7 +296,7 @@
         "func": "function isObject(item) {\n  return (item && typeof item === 'object' && !Array.isArray(item));\n}\n\n\nfunction mergeDeep(target, ...sources) {\n  if (!sources.length) return target;\n  const source = sources.shift();\n\n  if (isObject(target) && isObject(source)) {\n    for (const key in source) {\n      if (isObject(source[key])) {\n        if (!target[key]) Object.assign(target, { [key]: {} });\n        mergeDeep(target[key], source[key]);\n      } else {\n        Object.assign(target, { [key]: source[key] });\n      }\n    }\n  }\n\n  return mergeDeep(target, ...sources);\n}\n\nvar defaultTopics = global.get(\"topics\") || {};\nvar devTopics =  msg.payload;\n\nmsg.payload = mergeDeep(defaultTopics,devTopics);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 870,
+        "x": 930,
         "y": 400,
         "wires": [
             [
@@ -336,9 +318,9 @@
         "id": "639a6001.3275b",
         "type": "comment",
         "z": "92f553e0.da738",
-        "name": "This section deals with incoming mqtt messages, and fetches additional data.",
+        "name": "This section deals with incoming mqtt messages, and fetches additional data from GitHub.",
         "info": "",
-        "x": 350,
+        "x": 390,
         "y": 240,
         "wires": []
     },
@@ -349,18 +331,139 @@
         "name": "This section generates dummy data for testing.",
         "info": "",
         "x": 260,
-        "y": 520,
+        "y": 600,
         "wires": []
     },
     {
-        "id": "34524e6f.59a92a",
-        "type": "comment",
+        "id": "622d22e0.cf936c",
+        "type": "mqtt in",
         "z": "92f553e0.da738",
-        "name": "Further information on device topics is fetched from GitHub and saved",
-        "info": "",
-        "x": 830,
-        "y": 360,
+        "name": "",
+        "topic": "testHeatNetwork/+/+/system/deviceVersion",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "15057af5.972105",
+        "x": 260,
+        "y": 400,
+        "wires": [
+            [
+                "49ce37e4.642c4"
+            ]
+        ]
+    },
+    {
+        "id": "49ce37e4.642c4",
+        "type": "function",
+        "z": "92f553e0.da738",
+        "name": "parse MQTT",
+        "func": "\n\nmsg.deviceVersion = msg.payload;\n\nif (global.get(\"topics.\" + msg.deviceVersion)) { return [msg,null]; }\n\nmsg.url = \"https://raw.githubusercontent.com/heatweb/heat-network/master/devices/versions/\" +  msg.deviceVersion  + \"/\" +  msg.deviceVersion + \"_topics.json\"\n\nmsg.topic = msg.deviceVersion;\nmsg.payload = msg.deviceVersion;\n\nreturn msg; ",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 400,
+        "wires": [
+            [
+                "f4b9c703.fb2ba"
+            ]
+        ]
+    },
+    {
+        "id": "7098e53e.864174",
+        "type": "inject",
+        "z": "92f553e0.da738",
+        "name": "substation2PDA",
+        "topic": "",
+        "payload": "substation2PDA",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 200,
+        "y": 780,
+        "wires": [
+            [
+                "3328e7c4.10fec"
+            ]
+        ]
+    },
+    {
+        "id": "3328e7c4.10fec",
+        "type": "mqtt out",
+        "z": "92f553e0.da738",
+        "name": "",
+        "topic": "testHeatNetwork/protocolScript/substation1/system/deviceVersion",
+        "qos": "0",
+        "retain": "false",
+        "broker": "15057af5.972105",
+        "x": 780,
+        "y": 780,
         "wires": []
+    },
+    {
+        "id": "f4b9c703.fb2ba",
+        "type": "rbe",
+        "z": "92f553e0.da738",
+        "name": "once",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 690,
+        "y": 400,
+        "wires": [
+            [
+                "9e76a15d.1def78"
+            ]
+        ]
+    },
+    {
+        "id": "7128eb9.bf1d394",
+        "type": "inject",
+        "z": "92f553e0.da738",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 697,
+        "y": 494,
+        "wires": [
+            [
+                "8413c466.5f413"
+            ]
+        ]
+    },
+    {
+        "id": "8413c466.5f413",
+        "type": "change",
+        "z": "92f553e0.da738",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 717,
+        "y": 454,
+        "wires": [
+            [
+                "f4b9c703.fb2ba"
+            ]
+        ]
     },
     {
         "id": "15057af5.972105",
