@@ -1,1 +1,28 @@
-{"test":"test"}
+{
+  "substation": {
+    "system": {
+      "deviceType": {
+        "title": "Device type",
+        "default": "substation"
+      }
+    },
+    "dat": {
+      "tH": {
+        "title": "Temperature, primary hot supply",
+        "units": "°C"
+      },
+      "tHo": {
+        "title": "Temperature, primary return",
+        "units": "°C"
+      },
+      "tC": {
+        "title": "Temperature, secondary cold in",
+        "units": "°C"
+      },
+      "tCo": {
+        "title": "Temperature, secondary hot out",
+        "units": "°C"
+      }
+    }
+  }
+}
