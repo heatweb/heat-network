@@ -8,3 +8,5 @@ This flow takes incoming MQTT messages and uses data pulled from this repository
 * Setup calculated values
 * Implement manufacturer specific topics using the *system/deviceVersion* topic
 * Save incoming data into local memory along with a timestamp
+
+![flow_parse_mqtt](https://www.heatweb.co.uk/w/images/4/48/Mqttparse.jpg)
