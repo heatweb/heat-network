@@ -3,6 +3,9 @@ Heat network protocol based on standardised network control and reporting method
 
 The devices folder contains information for each type of device.
 
+This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Network_Protocol
+
+
 ## Protocol Rules
 
 * camelCase naming.
