@@ -19,27 +19,27 @@
     },
     "dat": {
       "tH": {
-        "title": "Temperature, primary hot supply",
+        "title": "Primary hot supply temperature",
         "units": "°C"
       },
       "tHo": {
-        "title": "Temperature, primary return",
+        "title": "Primary return temperature",
         "units": "°C"
       },
       "tC": {
-        "title": "Temperature, secondary cold in",
+        "title": "DHW cold in temperature",
         "units": "°C"
       },
       "tCo": {
-        "title": "Temperature, secondary hot out",
+        "title": "DHW hot out temperature",
         "units": "°C"
       },
       "tIn": {
-        "title": "Temperature, input",
+        "title": "Input temperature",
         "units": "°C"
       },
       "tOut": {
-        "title": "Temperature, output",
+        "title": "Output temperature",
         "units": "°C"
       }
     }
