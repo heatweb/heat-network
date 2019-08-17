@@ -41,6 +41,14 @@
       "tOut": {
         "title": "Output temperature",
         "units": "°C"
+      },
+      "tF": {
+        "title": "Flow temperature",
+        "units": "°C"
+      },
+      "tR": {
+        "title": "Return temperature",
+        "units": "°C"
       }
     }
   }
