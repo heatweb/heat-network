@@ -33,6 +33,14 @@
       "tCo": {
         "title": "Temperature, secondary hot out",
         "units": "°C"
+      },
+      "tIn": {
+        "title": "Temperature, input",
+        "units": "°C"
+      },
+      "tOut": {
+        "title": "Temperature, output",
+        "units": "°C"
       }
     }
   }
