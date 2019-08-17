@@ -50,6 +50,14 @@
         "title": "Return temperature",
         "units": "°C"
       }
+    },
+    "alarm": {
+      "relay": {
+        "title": "Fault relay alarm"
+      },
+      "mcb": {
+        "title": "Circuit breaker trip alarm"
+      }
     }
   }
 }
