@@ -49,6 +49,18 @@
       "tR": {
         "title": "Return temperature",
         "units": "°C"
+      },
+      "tRC": {
+        "title": "Common return temperature",
+        "units": "°C"
+      },
+      "tHeader": {
+        "title": "Header output temperature",
+        "units": "°C"
+      },
+      "tCylT": {
+        "title": "Cylinder temperature (top)",
+        "units": "°C"
       }
     },
     "alarm": {
