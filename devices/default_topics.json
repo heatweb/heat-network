@@ -1,5 +1,55 @@
 {
   "default": {
+    "system": {
+      "serialTIL": {
+        "title": "Contract serial number"
+      },
+      "serialHIU": {
+        "title": "HIU serial number"
+      },
+      "serialController": {
+        "title": "HIU controller serial number"
+      },
+      "serialHeatMeter": {
+        "title": "Heat meter serial number"
+      },
+      "plot": {
+        "title": "Plot identity"
+      },
+      "timestamp": {
+        "title": "Time of last data received"
+      },
+      "node": {
+        "title": "Communications node serial number"
+      },
+      "Firmware": {
+        "title": "HIU firmware version"
+      },
+      "network": {
+        "title": "Network identity"
+      },
+      "Serial": {
+        "title": "HIU controller serial number"
+      },
+      "lastcontact": {
+        "title": "Time of last data from device"
+      },
+      "time": {
+        "title": "Timestamp of last data from device"
+      },
+      "Nodeware": {
+        "title": "Node firmware firsion"
+      },
+      "usb": {
+        "title": "USB port for HIU"
+      },
+      "property": {
+        "title": "Property identity"
+      },
+      "tempid": {
+        "title": "Temporary identity"
+      }
+    },
     "stat": {
       "state": {
         "title": "Device state",
@@ -15,6 +65,108 @@
       "alarms": {
         "title": "Number of current alarms",
         "default": 0
+      },
+      "beacon": {
+        "title": ""
+      },
+      "warnings": {
+        "title": ""
+      },
+      "vHDHW24": {
+        "title": ""
+      },
+      "vHStanby24": {
+        "title": ""
+      },
+      "vHCH24": {
+        "title": ""
+      },
+      "vH24": {
+        "title": ""
+      },
+      "vwatH24": {
+        "title": ""
+      },
+      "vwatHoDHW24": {
+        "title": ""
+      },
+      "vwatHoStanby24": {
+        "title": ""
+      },
+      "vwatHoCH24": {
+        "title": ""
+      },
+      "vwatHo24": {
+        "title": ""
+      },
+      "vC": {
+        "title": ""
+      },
+      "DHWCount": {
+        "title": ""
+      },
+      "e_TEMPERATURESENSORS": {
+        "title": ""
+      },
+      "e_FLOWSENSOR": {
+        "title": ""
+      },
+      "e_PRIMARYCONTROL": {
+        "title": ""
+      },
+      "e_DISTRICTHEATING": {
+        "title": ""
+      },
+      "e_CHRETURNTEMP": {
+        "title": ""
+      },
+      "e_DHWTEMP": {
+        "title": ""
+      },
+      "e_DISTRICTHEATINGTEMP": {
+        "title": ""
+      },
+      "e_DHRETURNTEMP": {
+        "title": ""
+      },
+      "e_CENTRALHEATING": {
+        "title": ""
+      },
+      "e_WARMUPTIMER": {
+        "title": ""
+      },
+      "e_CHTEMPWARNING": {
+        "title": ""
+      },
+      "e_CHTEMPERROR": {
+        "title": ""
+      },
+      "lastvCrun": {
+        "title": ""
+      },
+      "lastvClen": {
+        "title": ""
+      },
+      "lastvCavr": {
+        "title": ""
+      },
+      "lastchBal": {
+        "title": ""
+      },
+      "last_vCrun": {
+        "title": ""
+      },
+      "last_vClen": {
+        "title": ""
+      },
+      "last_vCavr": {
+        "title": ""
+      },
+      "last_chBal": {
+        "title": ""
+      },
+      "tis": {
+        "title": ""
       }
     },
     "dat": {
@@ -61,6 +213,173 @@
       "tCylT": {
         "title": "Cylinder temperature (top)",
         "units": "°C"
+      },
+      "fC": {
+        "title": ""
+      },
+      "dpH": {
+        "title": ""
+      },
+      "runtimeDHW": {
+        "title": ""
+      },
+      "pCH": {
+        "title": ""
+      },
+      "stat": {
+        "title": ""
+      },
+      "st": {
+        "title": ""
+      },
+      "tHoCH": {
+        "title": ""
+      },
+      "xDHW": {
+        "title": ""
+      },
+      "fHDHW": {
+        "title": ""
+      },
+      "eT": {
+        "title": ""
+      },
+      "TTdhw": {
+        "title": ""
+      },
+      "eS": {
+        "title": ""
+      },
+      "tHoDHW": {
+        "title": ""
+      },
+      "tCHo": {
+        "title": ""
+      },
+      "pump": {
+        "title": ""
+      },
+      "xCH": {
+        "title": ""
+      },
+      "fHCH": {
+        "title": ""
+      },
+      "vH": {
+        "title": ""
+      }
+    },
+    "settings": {
+      "magic": {
+        "title": ""
+      },
+      "setpoint": {
+        "title": ""
+      },
+      "WarmupBoost": {
+        "title": ""
+      },
+      "EcoMode": {
+        "title": ""
+      },
+      "PressureMode": {
+        "title": ""
+      },
+      "PowerUpCounter": {
+        "title": ""
+      },
+      "ErrorCounter": {
+        "title": ""
+      },
+      "DHReturnLimit": {
+        "title": ""
+      },
+      "HESupply": {
+        "title": ""
+      },
+      "PumpTimeout": {
+        "title": ""
+      },
+      "PumpProtection": {
+        "title": ""
+      },
+      "HEProtectionMode": {
+        "title": ""
+      },
+      "DHWExchangerAntiLegionella": {
+        "title": ""
+      },
+      "DHWExchangerEcoHeatTemperature": {
+        "title": ""
+      },
+      "DHWExchangerEcoHeatTime": {
+        "title": ""
+      },
+      "CHHeaterCurveSlope": {
+        "title": ""
+      },
+      "CHHeaterCurveDisplacement": {
+        "title": ""
+      },
+      "CentralHeatingControl": {
+        "title": ""
+      },
+      "PrePayShutOff": {
+        "title": ""
+      },
+      "pFill": {
+        "title": "System fill pressure",
+        "units": "bar",
+        "min": 1.5,
+        "max": 6,
+        "default": 2.2
+      }
+    },
+    "property": {
+      "plot": {
+        "title": ""
+      },
+      "class": {
+        "title": ""
+      },
+      "plotCount": {
+        "title": ""
+      },
+      "block": {
+        "title": ""
+      },
+      "core": {
+        "title": ""
+      },
+      "floor": {
+        "title": ""
+      },
+      "floorArea": {
+        "title": ""
+      },
+      "postCode": {
+        "title": ""
+      },
+      "occupancy": {
+        "title": ""
+      },
+      "kwCH": {
+        "title": ""
+      },
+      "kwDHW": {
+        "title": ""
+      },
+      " transferTypeCH": {
+        "title": ""
+      },
+      "emitterTypeCH": {
+        "title": ""
+      },
+      "transferTypeDHW": {
+        "title": ""
+      },
+      "vStoreDHW": {
+        "title": ""
       }
     },
     "alarm": {
@@ -69,19 +388,6 @@
       },
       "mcb": {
         "title": "Circuit breaker trip alarm"
-      }
-    },
-    "settings": {
-      "pFill": {
-        "title": "System fill pressure",
-        "units": "bar",
-        "min": 1.5,
-        "max": 6,
-        "default": 2.2
-      },
-      "tSet": {
-        "title": "Setpoint temperature",
-        "units": "°C"
       }
     }
   }
