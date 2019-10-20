@@ -301,7 +301,7 @@
         "title": "Magic spell"
       },
       "setpoint": {
-        "title": "",
+        "title": "Hot water setpoint temperature",
         "units": "°C"
       },
       "WarmupBoost": {
