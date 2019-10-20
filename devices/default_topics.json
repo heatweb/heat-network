@@ -93,7 +93,7 @@
         "units": "°C"
       },
       "vwatHoDHW24": {
-        "title": "Volume weighted network flow temperature for hot water today",
+        "title": "Volume weighted network return temperature for hot water today",
         "units": "°C"
       },
       "vwatHoStanby24": {
