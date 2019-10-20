@@ -258,7 +258,8 @@
         "units": "°C"
       },
       "xDHW": {
-        "title": "Hot water valve steps"
+        "title": "Hot water valve steps",
+        "units": "/270"
       },
       "fHDHW": {
         "title": "Network flow rate for hot water"
@@ -286,7 +287,8 @@
         "title": "Central heating pump on"
       },
       "xCH": {
-        "title": "Central heating valve steps"
+        "title": "Central heating valve steps",
+        "units": "/270"
       },
       "fHCH": {
         "title": "Network flow rate for central heating",
