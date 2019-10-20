@@ -67,106 +67,123 @@
         "default": 0
       },
       "beacon": {
-        "title": ""
+        "title": "Communications heart-beat"
       },
       "warnings": {
-        "title": ""
+        "title": "Number of warnings"
       },
       "vHDHW24": {
-        "title": ""
+        "title": "Volume drawn today from network for hot water",
+        "units": "litres"
       },
       "vHStanby24": {
-        "title": ""
+        "title": "Volume drawn today from network for keep-warm",
+        "units": "litres"
       },
       "vHCH24": {
-        "title": ""
+        "title": "Volume drawn today from network for central heating",
+        "units": "litres"
       },
       "vH24": {
-        "title": ""
+        "title": "Total volume drawn today from network",
+        "units": "litres"
       },
       "vwatH24": {
-        "title": ""
+        "title": "Volume weighted network flow temperature for today",
+        "units": "°C"
       },
       "vwatHoDHW24": {
-        "title": ""
+        "title": "Volume weighted network flow temperature for hot water today",
+        "units": "°C"
       },
       "vwatHoStanby24": {
-        "title": ""
+        "title": "Volume weighted network return temperature for keep-warm today",
+        "units": "°C"
       },
       "vwatHoCH24": {
-        "title": ""
+        "title": "Volume weighted network return temperature for central heating today",
+        "units": "°C"
       },
       "vwatHo24": {
-        "title": ""
+        "title": "Volume weighted network return temperature for today",
+        "units": "°C"
       },
       "vC": {
-        "title": ""
+        "title": "Total volume of hot water drawn through HIU",
+        "units": "litres"
       },
       "DHWCount": {
-        "title": ""
+        "title": "Number of hot water deliveries"
       },
       "e_TEMPERATURESENSORS": {
-        "title": ""
+        "title": "Error on tempweature sensor"
       },
       "e_FLOWSENSOR": {
-        "title": ""
+        "title": "Error on flow temperature"
       },
       "e_PRIMARYCONTROL": {
-        "title": ""
+        "title": "Error with primary control"
       },
       "e_DISTRICTHEATING": {
-        "title": ""
+        "title": "Error on heat network"
       },
       "e_CHRETURNTEMP": {
-        "title": ""
+        "title": "Error on heating return"
       },
       "e_DHWTEMP": {
-        "title": ""
+        "title": "Error on hot water temperature"
       },
       "e_DISTRICTHEATINGTEMP": {
-        "title": ""
+        "title": "Error on network supply temperature"
       },
       "e_DHRETURNTEMP": {
-        "title": ""
+        "title": "Error on network return temperature"
       },
       "e_CENTRALHEATING": {
-        "title": ""
+        "title": "Error on central heating"
       },
       "e_WARMUPTIMER": {
-        "title": ""
+        "title": "Error on heat-up"
       },
       "e_CHTEMPWARNING": {
-        "title": ""
+        "title": "Warning on central heating temperature"
       },
       "e_CHTEMPERROR": {
-        "title": ""
+        "title": "Error on central heating temperature"
       },
       "lastvCrun": {
-        "title": ""
+        "title": "Volume drawn during last hot water delivery",
+        "units": "litres"
       },
       "lastvClen": {
-        "title": ""
+        "title": "Duration of last hot water delivery",
+        "units": "seconds"
       },
       "lastvCavr": {
-        "title": ""
+        "title": "Average flow rate of last hot water delivery",
+        "units": "ltr/min"
       },
       "lastchBal": {
-        "title": ""
+        "title": "Balancing of last central heating delivery"
       },
       "last_vCrun": {
-        "title": ""
+        "title": "Volume drawn during last hot water delivery",
+        "units": "litres"
       },
       "last_vClen": {
-        "title": ""
+        "title": "Duration of last hot water delivery",
+        "units": "seconds"
       },
       "last_vCavr": {
-        "title": ""
+        "title": "Average flow rate of last hot water delivery",
+        "units": "ltr/min"
       },
       "last_chBal": {
-        "title": ""
+        "title": "Balancing of last central heating delivery"
       },
       "tis": {
-        "title": ""
+        "title": "Time in current HIU state",
+        "units": "seconds"
       }
     },
     "dat": {
@@ -215,117 +232,134 @@
         "units": "°C"
       },
       "fC": {
-        "title": ""
+        "title": "Flow rate to hot water",
+        "units": "ltr/min"
       },
       "dpH": {
-        "title": ""
+        "title": "Differential pressure on network",
+        "units": "bar"
       },
       "runtimeDHW": {
-        "title": ""
+        "title": "Current hot water duration",
+        "units": "seconds"
       },
       "pCH": {
-        "title": ""
+        "title": "Central heating pressure",
+        "units": "bar"
       },
       "stat": {
-        "title": ""
+        "title": "Room thermostat demand"
       },
       "st": {
-        "title": ""
+        "title": "HIU state"
       },
       "tHoCH": {
-        "title": ""
+        "title": "Network return temperature from central heating",
+        "units": "°C"
       },
       "xDHW": {
-        "title": ""
+        "title": "Hot water valve steps"
       },
       "fHDHW": {
-        "title": ""
+        "title": "Network flow rate for hot water"
       },
       "eT": {
-        "title": ""
+        "title": "Error temperature",
+        "units": "°C"
       },
       "TTdhw": {
-        "title": ""
+        "title": "Hot water target temperature",
+        "units": "°C"
       },
       "eS": {
-        "title": ""
+        "title": "Error state"
       },
       "tHoDHW": {
-        "title": ""
+        "title": "Network return temperature from hot water",
+        "units": "°C"
       },
       "tCHo": {
-        "title": ""
+        "title": "Central heating supply temperature",
+        "units": "°C"
       },
       "pump": {
-        "title": ""
+        "title": "Central heating pump on"
       },
       "xCH": {
-        "title": ""
+        "title": "Central heating valve steps"
       },
       "fHCH": {
-        "title": ""
+        "title": "Network flow rate for central heating",
+        "units": "ltr/min"
       },
       "vH": {
-        "title": ""
+        "title": "Network volume drawn in total"
       }
     },
     "settings": {
       "magic": {
-        "title": ""
+        "title": "Magic spell"
       },
       "setpoint": {
-        "title": ""
+        "title": "",
+        "units": "°C"
       },
       "WarmupBoost": {
-        "title": ""
+        "title": "Warm-up boost flow rate",
+        "units": "ltr/min"
       },
       "EcoMode": {
-        "title": ""
+        "title": "Keep-warm mode"
       },
       "PressureMode": {
-        "title": ""
+        "title": "Differential pressure calculation mode"
       },
       "PowerUpCounter": {
-        "title": ""
+        "title": "Power-up counter"
       },
       "ErrorCounter": {
-        "title": ""
+        "title": "Error counter"
       },
       "DHReturnLimit": {
-        "title": ""
+        "title": "Network return limit temperature",
+        "units": "°C"
       },
       "HESupply": {
-        "title": ""
+        "title": "Central heating setpoint temperature",
+        "units": "°C"
       },
       "PumpTimeout": {
-        "title": ""
+        "title": "Central heating pump time-out",
+        "units": "seconds"
       },
       "PumpProtection": {
-        "title": ""
+        "title": "Pump protection enabled"
       },
       "HEProtectionMode": {
-        "title": ""
+        "title": "Network return limit enabled"
       },
       "DHWExchangerAntiLegionella": {
-        "title": ""
+        "title": "Legionella cycle enabled"
       },
       "DHWExchangerEcoHeatTemperature": {
-        "title": ""
+        "title": "Keep-warm temperature",
+        "units": "°C"
       },
       "DHWExchangerEcoHeatTime": {
-        "title": ""
+        "title": "Keep-warm time-out",
+        "units": "minutes"
       },
       "CHHeaterCurveSlope": {
-        "title": ""
+        "title": "Weather compensation curve"
       },
       "CHHeaterCurveDisplacement": {
-        "title": ""
+        "title": "Weather compensation displacement"
       },
       "CentralHeatingControl": {
-        "title": ""
+        "title": "Central heating enabled"
       },
       "PrePayShutOff": {
-        "title": ""
+        "title": "Services enabled"
       },
       "pFill": {
         "title": "System fill pressure",
@@ -337,49 +371,52 @@
     },
     "property": {
       "plot": {
-        "title": ""
+        "title": "Plot identity"
       },
       "class": {
-        "title": ""
+        "title": "Plot classes"
       },
       "plotCount": {
-        "title": ""
+        "title": "Plot index"
       },
       "block": {
-        "title": ""
+        "title": "Block identity"
       },
       "core": {
-        "title": ""
+        "title": "Core identity"
       },
       "floor": {
-        "title": ""
+        "title": "Floor"
       },
       "floorArea": {
-        "title": ""
+        "title": "Floor area"
       },
       "postCode": {
-        "title": ""
+        "title": "Post code"
       },
       "occupancy": {
-        "title": ""
+        "title": "Occupancy, bedrooms and peaople"
       },
       "kwCH": {
-        "title": ""
+        "title": "Peak central heating power",
+        "units": "kW"
       },
       "kwDHW": {
-        "title": ""
+        "title": "Peak hot water power",
+        "units": "kW"
       },
-      " transferTypeCH": {
-        "title": ""
+      "transferTypeCH": {
+        "title": "Central heating connection type"
       },
       "emitterTypeCH": {
-        "title": ""
+        "title": "Central heating emitter type"
       },
       "transferTypeDHW": {
-        "title": ""
+        "title": "Hot water connection type"
       },
       "vStoreDHW": {
-        "title": ""
+        "title": "Volume of stored hot water",
+        "units": "litres"
       }
     },
     "alarm": {
