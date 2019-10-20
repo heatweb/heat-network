@@ -417,7 +417,7 @@
         "title": "Hot water connection type"
       },
       "vStoreDHW": {
-        "title": "Volume of stored hot water",
+        "title": "Volume of hot water cylinder",
         "units": "litres"
       }
     },
