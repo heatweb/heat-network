@@ -391,7 +391,8 @@
         "title": "Floor"
       },
       "floorArea": {
-        "title": "Floor area"
+        "title": "Floor area",
+        "units": "m2"
       },
       "postCode": {
         "title": "Post code"
