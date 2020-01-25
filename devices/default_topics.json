@@ -421,6 +421,40 @@
         "units": "litres"
       }
     },
+    "meter": {
+      "tF": {
+        "title": "Flow temperature",
+        "units": "°C"
+      },
+      "tR": {
+        "title": "Return temperature",
+        "units": "°C"
+      },
+      "fR": {
+        "title": "Flow rate",
+        "units": "litres/minute"
+      },
+      "m3h": {
+        "title": "Flow rate",
+        "units": "m3/h"
+      },
+      "kw": {
+        "title": "Power",
+        "units": "kW"
+      },
+      "kwh": {
+        "title": "Energy",
+        "units": "kWh"
+      },
+      "tDiff": {
+        "title": "Temperature difference",
+        "units": "°C"
+      },
+      "tErrorHM": {
+        "title": "Tempreature sensor error",
+        "units": "°C"
+      }
+    },
     "alarm": {
       "relay": {
         "title": "Fault relay alarm"
