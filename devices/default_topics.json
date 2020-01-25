@@ -434,6 +434,10 @@
         "title": "Flow rate",
         "units": "litres/minute"
       },
+      "m3": {
+        "title": "Volume",
+        "units": "m3"
+      },
       "m3h": {
         "title": "Flow rate",
         "units": "m3/h"
