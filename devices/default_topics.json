@@ -163,7 +163,7 @@
         "title": "Temperature of last hot water delivery",
         "units": "°C"
       },
-      "lastH": {
+      "lasttH": {
         "title": "Primary temperature for last hot water delivery",
         "units": "°C"
       },
