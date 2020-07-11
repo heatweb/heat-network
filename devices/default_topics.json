@@ -159,6 +159,18 @@
         "title": "Duration of last hot water delivery",
         "units": "seconds"
       },
+      "lasttCo": {
+        "title": "Temperature of last hot water delivery",
+        "units": "°C"
+      },
+      "lastH": {
+        "title": "Primary temperature for last hot water delivery",
+        "units": "°C"
+      },
+      "lasttHoDHW": {
+        "title": "Primary return temperature for last hot water delivery",
+        "units": "°C"
+      },      
       "lastvCavr": {
         "title": "Average flow rate of last hot water delivery",
         "units": "ltr/min"
