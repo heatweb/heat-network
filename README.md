@@ -30,6 +30,7 @@ All data requires describing:
 
 A 5 level MQTT topic allows all these basic requirements to be described in a way that can be filtered using wildcards for managing subscribtions.
 
+The protocol data can easily be stored in software via a nested JSON object, or in a file system via a directory structure.
 
 ## How to use this protocol
 
