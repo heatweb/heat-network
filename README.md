@@ -10,16 +10,10 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 
 * camelCase naming.
 * 5 levels of MQTT topic for a network (networkId / publisherId / deviceId / dataType / key).
-* The standard data types are "dat" (readings), "stat" (statistics, calculations), "alarm", "system", "settings", "set" & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
-* Underscore "_" character not to be used in naming. It is reserved for replacing "/" character in non MQTT systems.
-* Each device will be assigned the following standard sub-topics to represent its state:<br>
+* The standard data types are "dat" (readings), "stat" (statistics, calculations), "alarm", "system", "settings", "json", "set" & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
+* Each device will be assigned the following standard sub-topics to represent its type and state:<br>
   +/+/+/stat/state = on, off, ok, warning, or alarm<br>
-  +/+/+/stat/alarms = the total number of current alarms
-* The deviceId should typically be a standard device type, as listed below, followed directly by an index number where there are more than one, for example "substation1". Alternatively a unique serial number can be used.
-* Each device can optionally be assigned a system setting to further represent its device type:<br>
-  +/+/+/system/deviceVersion<br>
-  This can be a version described in this protocol, or the URL of a suitable JSON file following the format described here. Values will overwrite default values inferred from the deviceId.
-* The publishId (node) should be an 8 character string, containing either letters or numbers, but no other characters. This is to maintain compatibility with radio systems using a 16 character hex Id.
+  +/+/+/system/deviceType = device classes, e.g. "pump"
 
 ## How to use this protocol
 
