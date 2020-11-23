@@ -15,6 +15,22 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
   +/+/+/stat/state = on, off, ok, warning, or alarm<br>
   +/+/+/system/deviceType = device classes, e.g. "pump", "heatweb node" or "airSource heatPump"
 
+## Overview
+
+MQTT has been selected as a modern, light-weight, open protocol for network use, allowing for user management, assess rules, and wildcards. It is the standard IoT protocol.
+
+All data requires describing:
+
+* Where are we talking about - a network id 
+* Who is providing the data - a publisher id
+* What it applies to - a device id
+* The type of data 
+* A name - a data key
+* A value
+
+A 5 level MQTT topic allows all these basic requirements to be described in a way that can be filtered using wildcards for managing subscribtions.
+
+
 ## How to use this protocol
 
 This project is organised to enable systems to automatically:
