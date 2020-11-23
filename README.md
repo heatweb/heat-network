@@ -13,7 +13,7 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * The standard data types are "dat" (readings), "stat" (statistics, calculations), "alarm", "system", "settings", "json", "set" & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
 * Each device will be assigned the following standard sub-topics to represent its type and state:<br>
   +/+/+/stat/state = on, off, ok, warning, or alarm<br>
-  +/+/+/system/deviceType = device classes, e.g. "pump"
+  +/+/+/system/deviceType = device classes, e.g. "pump", "heatweb node" or "airSource heatPump"
 
 ## How to use this protocol
 
