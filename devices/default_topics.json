@@ -22,6 +22,30 @@
       "node": {
         "title": "Communications node serial number"
       },
+      "nodeId": {
+        "title": "Communications node identity",
+        "topicId": 2
+      },
+      "networkId": {
+        "title": "Communications network identity",
+        "topicId": 1
+      },
+      "deviceType": {
+        "title": "Type of device, space seperated",
+        "topicId": 3,
+        "examples": [
+          "node",
+          "hiu",
+          "hiu-group"
+          "substation",
+          "dp temp sensor",
+          "pump-group"
+        ]
+      },
+      "title": {
+        "title": "Device name",
+        "topicId": 4
+      },
       "Firmware": {
         "title": "HIU firmware version"
       },
