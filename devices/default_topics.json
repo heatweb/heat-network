@@ -42,10 +42,6 @@
           "pump-group"
         ]
       },
-      "title": {
-        "title": "Device name",
-        "topicId": 4
-      },
       "Firmware": {
         "title": "HIU firmware version"
       },
@@ -84,7 +80,8 @@
           "ok",
           "warning",
           "alarm"
-        ]
+        ],
+        "topicId":5
       },
       "alarms": {
         "title": "Number of current alarms",
@@ -337,6 +334,10 @@
     "settings": {
       "magic": {
         "title": "Magic spell"
+      },
+      "title": {
+        "title": "Device name",
+        "topicId": 4
       },
       "setpoint": {
         "title": "Hot water setpoint temperature",
