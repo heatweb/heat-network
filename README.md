@@ -1,5 +1,7 @@
 # Heat Network MQTT Protocol with Node-RED
-Heat network protocol based on standardised network control and reporting methodology.
+A heat network protocol based on standardised network control points and reporting methodology.
+
+At its core this is a dictionary to describe data using standardised identifiers, to provide compatibility between systems and easy sharing of data.
 
 The devices folder contains information for each type of device.
 
