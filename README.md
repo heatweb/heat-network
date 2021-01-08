@@ -11,9 +11,13 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * camelCase naming.
 * 5 levels of MQTT topic for a network (networkId / publisherId / deviceId / dataType / key).
 * The standard data types are "dat" (readings), "stat" (statistics, calculations), "alarm", "system", "settings", "json", "set" & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
-* Each device will be assigned the following standard sub-topics to represent its type and state:<br>
+* Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
   +/+/+/stat/state = on, off, ok, warning, or alarm<br>
+  +/+/+/settings/title = The name of the device<br>
   +/+/+/system/deviceType = device classes, e.g. "pump", "heatweb node" or "airSource heatPump"
+* The networkId can contain dashes to create a network hireachy, as would normall be described by further topic levels. E.g. nyNetwork-block1-riser1/...
+* The publisherId is normally the device itself, the communications node the device is connected to, or is part of, but may be a different device publishing relevant data or commands to the device.
+
 
 ## Overview
 
