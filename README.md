@@ -1,4 +1,4 @@
-# Heat Network MQTT Protocol with Node-RED
+# Heat Network MQTT Protocol
 A heat network protocol based on standardised network control points and reporting methodology.
 
 At its core this is a dictionary to describe data using standardised identifiers, to provide compatibility between systems and easy sharing of data.
