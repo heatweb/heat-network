@@ -13,11 +13,12 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * camelCase naming.
 * 5 levels of MQTT topic for a network (networkId / publisherId / deviceId / dataType / key).
 * The standard data types are "dat" (readings), "stat" (statistics, calculations), "alarm", "system", "settings", "json", "set" & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
+* BMS data types include "sensor" (analogue in), "digin" (digital in) and "driver" (output).
 * Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
   +/+/+/stat/state = on, off, ok, warning, or alarm<br>
-  +/+/+/settings/title = The name of the device<br>
-  +/+/+/system/deviceType = device classes, e.g. "pump", "heatweb node" or "airSource heatPump"<br>
-  +/+/+/system/parentDevice = deviceId of a parent device, to create a physical component hirearchy. 
+  +/+/+/system/title = The name of the device<br>
+  +/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "airSource heatPump"<br>
+  +/+/+/system/parentDevice = nodeId and deviceId of a parent device, to create a physical component hirearchy, e.g. the device "energycentre/boiler1" may have a parent device "energycentre/boilers", in turn has a parent "energycentre/lthw". 
 * The networkId can contain dashes to create a network hirearchy, as would normally be described by further topic levels. <br>
   E.g. myNetwork-block1/riser1node/riser1node/system/deviceType
 * The publisherId is normally the device itself, the communications node the device is connected to, or is part of, but may be a different device publishing relevant data or commands to the device.
