@@ -17,8 +17,7 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
   +/+/+/stat/state = on, off, ok, warning, or alarm<br>
   +/+/+/system/title = The name of the device<br>
-  +/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "airSource heatPump"<br>
-  +/+/+/system/parentDevice = nodeId and deviceId of a parent device, to create a physical component hirearchy, e.g. the device "energycentre/boiler1" may have a parent device "energycentre/boilers", in turn has a parent "energycentre/lthw". 
+  +/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "airSource heatPump"
 * The networkId can contain dashes to create a network hirearchy, as would normally be described by further topic levels. <br>
   E.g. myNetwork-block1/riser1node/riser1node/system/deviceType
 * The publisherId is normally the device itself, the communications node the device is connected to, or is part of, but may be a different device publishing relevant data or commands to the device.
