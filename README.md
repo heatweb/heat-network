@@ -23,6 +23,18 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * The publisherId is normally the device itself, the communications node the device is connected to, or is part of, but may be a different device publishing relevant data or commands to the device.
 
 
+## Examples
+
+ network_id / publisher_id / device_id / data_group / key = value
+ myHeatNetwork/plantroomController1/boiler1/sensor/tOut = 65.6   (boiler output temperature)
+ myHeatNetwork/plantroomController1/boiler1/alarm/tOut = ok 
+ myHeatNetwork/plantroomController1/boiler1/dat/run = 1   
+ myHeatNetwork/ab34c23Z/hiu0198984733686/dat/fC = 3.2   {HIU, tap flow rate)
+ myHeatNetwork/ab34c23Z/hiu0198984733686/settings/prepayRun = 1   {HIU, prepay isolation)
+ myHeatNetwork/ab34c23Z/hiu0198984733686/set/prepayRun = 0   {HIU, command to isolate on prepay)
+ myHeatNetwork/ab34c23Z/hiu0198984733686/hm/kwh24h = 13.3   {HIU heat meter, energy used over past 24 hours)
+ myHeatNetwork/ab34c23Z/blockB2/hm/kwh24h = 1204.3   {bulk heat meter, energy used over past 24 hours)
+
 ## Overview
 
 MQTT has been selected as a modern, light-weight, open protocol for network use, allowing for user management, assess rules, and wildcards. It is the standard IoT protocol.
