@@ -26,14 +26,14 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 
 ## Examples
 
- network_id / publisher_id / device_id / data_group / key = value
- myHeatNetwork/plantroomController1/boiler1/sensor/tOut = 65.6   (boiler output temperature)
- myHeatNetwork/plantroomController1/boiler1/alarm/tOut = ok 
- myHeatNetwork/plantroomController1/boiler1/dat/run = 1   
- myHeatNetwork/ab34c23Z/hiu0198984733686/dat/fC = 3.2   {HIU, tap flow rate)
- myHeatNetwork/ab34c23Z/hiu0198984733686/settings/prepayRun = 1   {HIU, prepay isolation)
- myHeatNetwork/ab34c23Z/hiu0198984733686/set/prepayRun = 0   {HIU, command to isolate on prepay)
- myHeatNetwork/ab34c23Z/hiu0198984733686/hm/kwh24h = 13.3   {HIU heat meter, energy used over past 24 hours)
+ network_id / publisher_id / device_id / data_group / key = value<br>
+ myHeatNetwork/plantroomController1/boiler1/sensor/tOut = 65.6   (boiler output temperature)<br>
+ myHeatNetwork/plantroomController1/boiler1/alarm/tOut = ok <br>
+ myHeatNetwork/plantroomController1/boiler1/dat/run = 1   <br>
+ myHeatNetwork/ab34c23Z/hiu0198984733686/dat/fC = 3.2   {HIU, tap flow rate)<br>
+ myHeatNetwork/ab34c23Z/hiu0198984733686/settings/prepayRun = 1   {HIU, prepay isolation)<br>
+ myHeatNetwork/ab34c23Z/hiu0198984733686/set/prepayRun = 0   {HIU, command to isolate on prepay)<br>
+ myHeatNetwork/ab34c23Z/hiu0198984733686/hm/kwh24h = 13.3   {HIU heat meter, energy used over past 24 hours)<br>
  myHeatNetwork/ab34c23Z/blockB2/hm/kwh24h = 1204.3   {bulk heat meter, energy used over past 24 hours)
 
 ## Overview
