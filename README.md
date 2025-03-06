@@ -5,7 +5,7 @@ At its core this is a dictionary to describe data using standardised identifiers
 
 The devices folder contains information for each type of device.
 
-This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Network_Protocol
+This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Network_Protocol, and forma part of Heatweb's SBRI UK Innovate funded project to establist an open-source standard for energy (heat networks and HVAC) systems.
 
 
 ## Protocol Rules
