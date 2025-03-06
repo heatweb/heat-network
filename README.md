@@ -11,7 +11,7 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 ## Protocol Rules
 
 * Unique topic per data point.
-* 5 levels of MQTT topic for each data point (networkId / publisherId / deviceId / dataType / key).
+* 5 levels of MQTT topic for each data point (networkId / nodeId / deviceId / dataType / key).
 * The standard data types are "dat" (default), "stat", "alarm", "system", "settings", "json", "set" (change a setting) & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
 * BMS data types include "sensor" (analogue in), "digin" (digital in) and "driver" (output).
 * Meter data types include "meter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
@@ -26,7 +26,7 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 
 ## Examples
 
- network_id / publisher_id / device_id / data_group / key = value<br>
+ network_id / node_id / device_id / data_group / key = value<br>
  myHeatNetwork/plantroomController1/boiler1/sensor/tOut = 65.6   (boiler output temperature)<br>
  myHeatNetwork/plantroomController1/boiler1/alarm/tOut = ok <br>
  myHeatNetwork/plantroomController1/boiler1/dat/run = 1   <br>
@@ -42,9 +42,9 @@ MQTT has been selected as a modern, light-weight, open protocol for network use,
 
 All data requires describing:
 
-* Where are we talking about - a network id 
-* Who is providing the data - a publisher id
-* What it applies to - a device id
+* A top level identifier for the system - a network id 
+* Where (which controller or location) the data comes from - a node id
+* What device it refers to - a device id
 * The type of data 
 * A name - a data key
 * A value
