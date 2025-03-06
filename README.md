@@ -11,7 +11,8 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 ## Protocol Rules
 
 * Unique topic per data point.
-* 5 levels of MQTT topic for each data point (networkId / nodeId / deviceId / dataType / key).
+* A minimum of 5 levels of MQTT topic for each data point (networkId / nodeId / deviceId / dataType / key).
+* Additional topic levels are ignored by the protocol, but can be used (as prefix levels) for additional levels of hierarchy for access control. Any additional levels used will be removed during ingest of data to a database.
 * The standard data types are "dat" (default), "stat", "alarm", "system", "settings", "json", "set" (change a setting) & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
 * BMS data types include "sensor" (analogue in), "digin" (digital in) and "driver" (output).
 * Meter data types include "meter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
@@ -19,9 +20,6 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
   +/+/+/stat/state = on, off, ok, standby, warning, or alarm<br>
   +/+/+/system/name = The name of the device<br>
   +/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "airSource heatPump"
-* The networkId can contain dashes to create a network hirearchy, as would normally be described by further topic levels. <br>
-  E.g. myNetwork-block1/riser1node/riser1node/system/deviceType
-* The publisherId is normally the device itself, the communications node the device is connected to, or is part of, but may be a different device publishing relevant data or commands to the device.
 
 
 ## Examples
@@ -42,7 +40,7 @@ MQTT has been selected as a modern, light-weight, open protocol for network use,
 
 All data requires describing:
 
-* A top level identifier for the system - a network id 
+* A globally unique top level identifier for the system - a network id 
 * Where (which controller or location) the data comes from - a node id
 * What device it refers to - a device id
 * The type of data 
