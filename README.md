@@ -1,11 +1,11 @@
 # Heat Network MQTT Protocol
 A heat network protocol based on standardised network control points and reporting methodology.
 
-At its core this is a dictionary to describe data using standardised identifiers, to provide compatibility between systems and easy sharing of data.
+At its core this is a dictionary to describe data using standardised identifiers, to provide compatibility and interoperability between systems (hardware and software).
 
-The devices folder contains information for each type of device.
+The devices folder contains information for various types of device.
 
-This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Network_Protocol, and forma part of Heatweb's SBRI UK Innovate funded project to establist an open-source standard for energy (heat networks and HVAC) systems.
+This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Network_Protocol, underpinning the communications for Heatweb's SBRI UK Innovate funded project to establist an open-source standard for energy (heat networks and HVAC) systems.
 
 
 ## Protocol Rules
