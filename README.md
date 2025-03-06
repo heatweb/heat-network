@@ -10,13 +10,14 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 
 ## Protocol Rules
 
-* camelCase naming.
-* 5 levels of MQTT topic for a network (networkId / publisherId / deviceId / dataType / key).
-* The standard data types are "dat" (readings), "stat" (statistics, calculations), "alarm", "system", "settings", "json", "set" & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
+* Unique topic per data point.
+* 5 levels of MQTT topic for each data point (networkId / publisherId / deviceId / dataType / key).
+* The standard data types are "dat" (default), "stat", "alarm", "system", "settings", "json", "set" (change a setting) & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
 * BMS data types include "sensor" (analogue in), "digin" (digital in) and "driver" (output).
+* Meter data types include "meter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
 * Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
-  +/+/+/stat/state = on, off, ok, warning, or alarm<br>
-  +/+/+/system/title = The name of the device<br>
+  +/+/+/stat/state = on, off, ok, standby, warning, or alarm<br>
+  +/+/+/system/name = The name of the device<br>
   +/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "airSource heatPump"
 * The networkId can contain dashes to create a network hirearchy, as would normally be described by further topic levels. <br>
   E.g. myNetwork-block1/riser1node/riser1node/system/deviceType
