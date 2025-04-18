@@ -1,5 +1,8 @@
 # Heat Network MQTT Protocol
-A heat network protocol based on standardised network control points and reporting methodology.
+
+The heat network protocol is used to describe data points within a system such as a heat network.  
+
+In a similar way that What 3 Words describes a point on the ground, the Heat Network Protocol uses 5 words to describe any data point.
 
 At its core this is a dictionary to describe data using standardised identifiers, to provide compatibility and interoperability between systems (hardware and software).
 
