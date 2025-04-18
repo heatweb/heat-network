@@ -21,7 +21,7 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * Meter data types include "meter" (combined), "hmeter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
 * Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
   +/+/+/system/name = The name of the device<br>
-  +/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "airSource heatPump"
+  +/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "ASHP" (Air Source Heat Pump)
 
 
 ## Examples
