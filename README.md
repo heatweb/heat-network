@@ -18,7 +18,7 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * Additional topic levels are ignored by the protocol, but can be used (as prefix levels) for additional levels of hierarchy for access control. Any additional levels used will be removed during ingest of data to a database.
 * The standard data types are "dat" (default), "stat", "alarm", "system", "settings", "json", "set" (change a setting) & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
 * BMS data types include "sensor" (analogue in), "digin" (digital in), "setpoint", and "driver" (output).
-* Meter data types include "meter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
+* Meter data types include "meter" (combined), "hmeter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
 * Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
   +/+/+/stat/state = on, off, ok, standby, warning, or alarm<br>
   +/+/+/system/name = The name of the device<br>
