@@ -20,7 +20,6 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * BMS data types include "sensor" (analogue in), "digin" (digital in), "setpoint", and "driver" (output).
 * Meter data types include "meter" (combined), "hmeter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
 * Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
-  +/+/+/stat/state = on, off, ok, standby, warning, or alarm<br>
   +/+/+/system/name = The name of the device<br>
   +/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "airSource heatPump"
 
