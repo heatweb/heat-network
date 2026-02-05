@@ -1,22 +1,33 @@
 # Heat Network MQTT Protocol
 
-The heat network protocol is used to describe data points within a system such as a heat network.  
+The heat network protocol is used to describe data points within a system such as a heat network, in a way that makes best use of the MQTT protocol and the benefits provided by its use of topics.  
 
-In a similar way that What 3 Words describes a point on the ground, the Heat Network Protocol uses 5 words to describe any data point.
+While this protocol is targetted at MQTT, the structure of topics also defines the organisation of data within a database, or directory structure.
 
-At its core this is a dictionary to describe data using standardised identifiers, to provide compatibility and interoperability between systems (hardware and software).
+The basic concept is to describe a data point using a structured label.  The standard uses a standard 6 levels in the label, seperated by a '/' character. The levels are as follows:
 
-The devices folder contains information for various types of device.
+* A Schema ID, that uniquely identifies a database partition (schema).
+* A Network ID, that uniquely identifies a [heat] network (or site) within a schema.
+* An Element ID, that uniquely identifies an element, node or entity within a network.  This may be an energy centre, a substation, or a property (consumer connection).
+* A Device ID, that uniquely identifies a device within an element.
+* A Data Type, that describes the type of data. Data types are standardised, but allow for custom layers of data. 
+* A Data Name, that describes the data point. Names are standardised, however a degree of mapping may be expected when working with data sources that are not labelled to the chosen standards. 
 
-This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Network_Protocol, underpinning the communications for Heatweb's SBRI UK Innovate funded project to establist an open-source standard for energy (heat networks and HVAC) systems.
+One of the main benefits provided by structuring labels in this way with MQTT is it allows data to be filtered using wildcards, and for security rules (both read and write) to be applied using a wildcarded topic. This allows, for example, a users acces to be limited to heat meter data on a particular heat network, and for data from different network operators to be transported in parallel over the same architecture.  
+
+MQTT is the standard IoT open-protocol, and is available in the [BMS] control systems running equipment within heat networks. It is one of the most robust and widely deployed protocols in use, and sits behind many well known messaging platforms.
+
+A standard dictionary is provided in this project to label data and provide compatibility and interoperability between networks.  This has been updated to cover the full range of HNTAS data points foe heat network elements.
+
+This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Network_Protocol, underpinning the communications for Heatweb's SBRI UK Innovate funded project to establist an open-source standard for energy (heat networks and HVAC) systems. The protocol has been in use since 2015.
 
 
 ## Protocol Rules
 
 * Unique topic per data point.
-* A minimum of 5 levels of MQTT topic for each data point (networkId / nodeId / deviceId / dataType / key).
-* Additional topic levels are ignored by the protocol, but can be used (as prefix levels) for additional levels of hierarchy for access control. Any additional levels used will be removed during ingest of data to a database.
-* The standard data types are "dat" (default), "stat", "alarm", "system", "settings", "json", "set" (change a setting) & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
+* A minimum of 6 levels of MQTT topic for each data point (schemaId / networkId / nodeId / deviceId / dataType / key).
+* Additional topic levels are ignored by the protocol, but can be used (as prefix levels) for additional levels of hierarchy for access control. 
+* The standard data types include "system", "design", "setpoint", "json", "set" (change a setting) & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
 * BMS data types include "sensor" (analogue in), "digin" (digital in), "setpoint", and "driver" (output).
 * Meter data types include "meter" (combined), "hmeter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
 * Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
