@@ -2,7 +2,7 @@
 
 MQTT is a publish/subscribe protocol, where a central MQTT server acts as a post office where data is published using unique topics.  Data is immediately recieved by subscribers, which will typically include a database ingest service that listens to data on the MQTT network, processes it and files it in a database.  Each MQTT topic is assigned a Quality Of Service tag, that ranges from fire and forget, to confirm receipt of data by holding it on the server until all known subscribers have confirmed receipt, even after a temporary disconnection of subscribers or publishers from the network.
 
-MQTT is the standard IoT open-protocol, and is available in the [BMS] control systems running equipment within heat networks. It is one of the most robust and widely deployed protocols in use, and sits behind many well known messaging platforms.  MQTT runs on almost any device or platform, including browsers, requiring very little overhead, with services capable of handling millions of communications per second. 
+MQTT is the standard IoT open-protocol, and is available in the [BMS] control systems running equipment within heat networks. It is one of the most robust and widely deployed protocols in use, and sits behind many well known messaging platforms.  MQTT runs on almost any device or platform, including browsers and many mobile Apps, requiring very little overhead, with services capable of handling millions of communications per second. 
 
 This heat network protocol is used to describe data points within a system such as a heat network, in a way that makes best use of the MQTT protocol and the benefits provided by its use of topics.  
 
