@@ -12,8 +12,8 @@ The basic concept is to describe a data point using a structured label.  The sta
 
 * A Schema ID, that uniquely identifies a database partition (schema).
 * A Network ID, that uniquely identifies a [heat] network (or site) within a schema.
-* An Element ID, that uniquely identifies an element, node or entity within a network.  This may be an energy centre, a substation, or a property (consumer connection).
-* A Device ID, that uniquely identifies a device within an element.
+* An Element ID, that uniquely identifies an element, node or entity within a network.  This may be, for examle, an energy centre, a substation, a distribution network, or a property (consumer connection).
+* A Device ID, that uniquely identifies a device within an element. Devices can be physical entities, such as HIUs, MVHR systems, DHW systems, hydraulic circuits, boilers or pumps.
 * A Data Type, that describes the type of data. Data types are standardised, but allow for custom layers of data. 
 * A Data Name, that describes the data point. Names are standardised, however a degree of mapping may be expected when working with data sources that are not labelled to the chosen standards. 
 
