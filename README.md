@@ -19,7 +19,11 @@ The basic concept is to describe a data point using a structured label.  The sta
 
 E.g.:  heatweb/myHeatNetwork/energycentre/boiler1/sensor/tF = 73.5 
 
-One of the main benefits provided by structuring labels in MQTT is it allows data to be filtered using wildcards, and for security rules (both read and write) to be applied using a wildcarded topic. This allows, for example, a users acces to be limited to heat meter data on a particular heat network, and for data from different network operators to be transported in parallel over the same architecture.  MQTT servers can be linked using bridges, allowing independently operated services to share data in near real-time (less than 1 second latency) according to topic based access rules. 
+One of the main benefits provided by structuring labels in MQTT is it allows data to be filtered using wildcards, and for security rules (both read and write) to be applied using a wildcarded topic. 
+
+E.g.:  heatweb/energycentre/+/+/sensor/#  (all sensor data points from the energy centre)
+
+This allows, for example, a users acces to be limited to heat meter data on a particular heat network, and for data from different network operators to be transported in parallel over the same architecture.  MQTT servers can be linked using bridges, allowing independently operated services to share data in near real-time (less than 1 second latency) according to topic based access rules. 
 
 A standard dictionary is provided in this project to label data and provide compatibility and interoperability between networks.  This has been updated to cover the full range of HNTAS data points foe heat network elements.
 
@@ -35,8 +39,8 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * BMS data types include "sensor" (analogue in), "digin" (digital in), "setpoint", and "driver" (output).
 * Meter data types include "meter" (combined), "hmeter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
 * Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
-  +/+/+/system/name = The name of the device<br>
-  +/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "ASHP" (Air Source Heat Pump)
+  +/+/+/+/system/name = The name of the device<br>
+  +/+/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "ASHP" (Air Source Heat Pump)
 
 
 ## Examples
