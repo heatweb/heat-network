@@ -26,7 +26,7 @@ heatweb/myHeatNetwork/energycentre/boiler1/sensor/tR = 51.9
 heatweb/myHeatNetwork/energycentre/boiler1/hmeter/kw = 523.32
 heatweb/myHeatNetwork/energycentre/boiler1/hmeter/tF = 73.1
 heatweb/myHeatNetwork/energycentre/boiler1/hmeter/tR = 51.3
-heatweb/myHeatNetwork/energycentre/boiler1/gmeter/m3 = 16353499.1
+heatweb/myHeatNetwork/energycentre/boiler1/gmeter/m3Gas = 16353499.1
 ```
 
 One of the main benefits provided by structuring labels in MQTT is it allows data to be filtered using wildcards, and for security rules (both read and write) to be applied using a wildcarded topic. 
