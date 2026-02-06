@@ -21,7 +21,7 @@ E.g.:  heatweb/myHeatNetwork/energycentre/boiler1/sensor/tF = 73.5
 
 One of the main benefits provided by structuring labels in MQTT is it allows data to be filtered using wildcards, and for security rules (both read and write) to be applied using a wildcarded topic. 
 
-E.g.:  heatweb/energycentre/+/+/sensor/#  (all sensor data points from the energy centre)
+E.g.:  heatweb/myHeatNetwork/energycentre/+/sensor/#  (all sensor data points from the energy centre)
 
 This allows, for example, a users acces to be limited to heat meter data on a particular heat network, and for data from different network operators to be transported in parallel over the same architecture.  MQTT servers can be linked using bridges, allowing independently operated services to share data in near real-time (less than 1 second latency) according to topic based access rules. 
 
