@@ -56,79 +56,29 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
   +/+/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "ASHP" (Air Source Heat Pump)
 
 
-## Examples
-
- network_id / node_id / device_id / data_group / key = value<br>
- myHeatNetwork/plantroomController1/boiler1/sensor/tOut = 65.6   (boiler output temperature)<br>
- myHeatNetwork/plantroomController1/boiler1/alarm/tOut = ok <br>
- myHeatNetwork/plantroomController1/boiler1/dat/run = 1   <br>
- myHeatNetwork/ab34c23Z/hiu0198984733686/dat/fC = 3.2   {HIU, tap flow rate)<br>
- myHeatNetwork/ab34c23Z/hiu0198984733686/settings/prepayRun = 1   {HIU, prepay isolation)<br>
- myHeatNetwork/ab34c23Z/hiu0198984733686/set/prepayRun = 0   {HIU, command to isolate on prepay)<br>
- myHeatNetwork/ab34c23Z/hiu0198984733686/hm/kwh24h = 13.3   {HIU heat meter, energy used over past 24 hours)<br>
- myHeatNetwork/ab34c23Z/blockB2/hm/kwh24h = 1204.3   {bulk heat meter, energy used over past 24 hours)
-
-## Overview
-
-MQTT has been selected as a modern, light-weight, open protocol for network use, allowing for user management, assess rules, and wildcards. It is the standard IoT protocol.
-
-All data requires describing:
-
-* A globally unique top level identifier for the system - a network id 
-* Where (which controller or location) the data comes from - a node id
-* What device it refers to - a device id
-* The type of data 
-* A name - a data key
-* A value
-
-A 5 level MQTT topic allows all these basic requirements to be described in a way that can be filtered using wildcards for managing subscribtions.
-
-The protocol data can easily be stored in software via a nested JSON object, or in a file system via a directory structure.
-
-## How to use this protocol
-
-This project is organised to enable systems to automatically:
-
-* Provide descriptions of topics
-* Provide units of measurement
-* Setup default values
-* Setup calculated values
-* Implement manufacturer specific topics using the *system/deviceVersion* topic
-* Link to web based documentation such as manufacturers installation instructions
-
-This project folder on GitHub contains JSON data files that describe the protocol, devices, and other useful data.  These files can be imported directly info software such as Node-RED. Example Node-RED flows are provided under the examples folder to get you up and running handling live data in a matter of minutes. 
-
-If you already have your MQTT heat network up and running, the example flows include real-time dashboards to accesss data on the network. These can be used for remote monitoring, commissioning, or to enable custom alarm routes to be programmed.  You will need server to know the server details and your personal credentials for access.
-
-![Image of Yaktocat](https://www.heatweb.co.uk/w/images/6/6b/Dashd1.jpg)
-
-This protocol can also be used in conjunction with an array of apps for mobile devices, providing the topics required to access readings, or to send commands. Server details and personal credentials for access will need to be setup and provided by the network operator. Topics and Node-RED flows are provided within this protocol to enable pairing between users and devices using tapping functions (hot tap signals).
+## Connecting to MQTT Services
 
 To access data on an MQTT server you will need:
 
 * server address
 * server port number
+* type of connection (encrypted/unencrypted)
 * user name
 * user password
-* list of topics you have permission for (this protocol helps there) 
+* list of topics you have permission for
 
 ## Device Types
 
-* boilerGroup
+* boilers
 * boiler
-* heatpump
+* heat pump
 * buffer
 * hiu
 * block
 * substation
-* pumpGroup
+* pumps
 * pump
 * pressure
-* gas
 * network
-* plantroom
-* onewire
-* meter
-* panel
-* bypass
-* filter
+* energy centre
+* bms
