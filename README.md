@@ -17,6 +17,8 @@ The basic concept is to describe a data point using a structured label.  The sta
 * A Data Type, that describes the type of data. Data types are standardised, but allow for custom layers of data. 
 * A Data Name, that describes the data point. Names are standardised, however a degree of mapping may be expected when working with data sources that are not labelled to the chosen standards. 
 
+E.g.:  heatweb/myHeatNetwork/energycentre/boiler1/sensor/tF = 73.5 
+
 One of the main benefits provided by structuring labels in MQTT is it allows data to be filtered using wildcards, and for security rules (both read and write) to be applied using a wildcarded topic. This allows, for example, a users acces to be limited to heat meter data on a particular heat network, and for data from different network operators to be transported in parallel over the same architecture.  MQTT servers can be linked using bridges, allowing independently operated services to share data in near real-time (less than 1 second latency) according to topic based access rules. 
 
 A standard dictionary is provided in this project to label data and provide compatibility and interoperability between networks.  This has been updated to cover the full range of HNTAS data points foe heat network elements.
