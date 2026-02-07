@@ -51,9 +51,12 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * The standard data types include "system", "design", "setpoint", "json", "set" (change a setting) & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
 * BMS data types include "sensor" (analogue in), "digin" (digital in), "setpoint", and "driver" (output).
 * Meter data types include "meter" (combined), "hmeter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
-* Each device will typically be assigned the following standard sub-topics to represent its type, name and state:<br>
-  +/+/+/+/system/name = The name of the device<br>
-  +/+/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "ASHP" (Air Source Heat Pump)
+* Each device will typically be assigned the following standard points to represent its type, name and state:<br>
+   +/+/+/+/system/name = The name of the device<br>
+   +/+/+/+/system/deviceType = device classes, e.g. "pump", "heatwebNode" or "ASHP" (Air Source Heat Pump)
+* Data points can be applied to multiple entities, using the 'global' keywork, for example:<br>
+   heatweb/myNetwork/global/network/system/name = The name of the heat network, and applies to all elements.<br>
+   heatweb/myNetwork/global/hiu/setpoint/tDHW = The default hot water setpoint on HIUs.<br>
 
 
 ## Connecting to MQTT Services
