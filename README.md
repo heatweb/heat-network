@@ -48,7 +48,7 @@ This project is based upon http://www.heatweb.co.uk/w/index.php?title=Heat_Netwo
 * Unique topic per data point.
 * A minimum of 6 levels of MQTT topic for each data point (schemaId / networkId / nodeId / deviceId / dataType / key).
 * Additional topic levels are ignored by the protocol, but can be used (as prefix levels) for additional levels of hierarchy for access control. 
-* The standard data types include "system", "design", "setpoint", "json", "set" (change a setting) & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
+* The standard data types include "system", "design", "setpoint", "json", "modbus", "acceptance", "set" (change a setting) & "cmd" (command). The list can be expanded, however data should be assigned a standard type if one fits.
 * BMS data types include "sensor" (analogue in), "digin" (digital in), "setpoint", and "driver" (output).
 * Meter data types include "meter" (combined), "hmeter" (heat), "cmeter" (cooling), "emeter" (electrcity) and "gmeter" (gas).
 * Each device will typically be assigned the following standard points to represent its type, name and state:<br>
